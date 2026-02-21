@@ -172,7 +172,8 @@ $$
 
 ## 💰 Economic Assumptions
 
-
+![Uplift Gain Curve](figures/gain_curve.png)
+![Marginal Gain Curve](figures/marginal_gain_curve.png)
 
 Let:
 
