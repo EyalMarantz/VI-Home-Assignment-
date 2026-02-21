@@ -186,12 +186,10 @@ $$
 \widehat{u} > \frac{C}{V}
 $$
 
-Given:
+We assume that this ratio could be around 0.02.
 
--   Observed uplift ≈ 7%
--   Assumed cost/value ratio ≈ 2%
-
-We retain a comfortable profitability margin.
+We would recommend reaching 20% of users. This will retain a comfortable profitability margin.
+In our test dataset, this translates to 2,0000 members.
 
 ------------------------------------------------------------------------
 
@@ -263,11 +261,11 @@ Sorted from highest to lowest expected incremental impact.
 
 # ✅ Design Decisions Summary
 
--   Modeled outreach as a causal treatment effect\
--   Used stratified CV for balanced evaluation\
--   Validated robustness via placebo tests\
--   Selected outreach size using marginal economic return\
--   Focused on interpretable, business-aligned features
+-   Modeled outreach as a causal treatment effect.
+-   Used stratified CV for balanced evaluation.
+-   Validated robustness via placebo tests.
+-   Selected outreach size using marginal economic return.
+-   Focused on interpretable, business-aligned features.
 
 ------------------------------------------------------------------------
 
@@ -275,9 +273,9 @@ Sorted from highest to lowest expected incremental impact.
 
 This solution provides:
 
--   A causal uplift modeling framework\
--   Robust cross-validated evaluation\
--   Economically informed outreach selection\
+-   A causal uplift modeling framework
+-   Robust cross-validated evaluation
+-   Economically informed outreach selection
 -   A reproducible end-to-end pipeline
 
 The final ranked list enables targeted intervention where outreach is
