@@ -185,16 +185,18 @@ We retain a comfortable profitability margin.
 # 📁 Repository Structure
 
     .
-    ├── data/
-    │   ├── train/
-    │   └── test/
     ├── experiments/
-    │   └── best_params.json
-    ├── src/
-    │   ├── feature_engineering.py
-    │   ├── modeling.py
-    │   ├── evaluation.py
+    │   ├── xgb_base_features_best_params.json
+    |   ├── xgb_base_content_features_best_params.json
+    |   ├── xgb_base_content_intersection_features_best_params.json
+    |   ├── experiment_results.csv
+    |   └── placebo_reults.csv
+    ├── src
+    │   ├── features.py
+    │   ├── train_evaluate.py
+    │   ├── inference.py
     │   └── main.py
+    |── data.zip
     ├── outreach_users.csv
     ├── requirements.txt
     └── README.md
@@ -209,17 +211,22 @@ We retain a comfortable profitability margin.
 pip install -r requirements.txt
 ```
 
-## 2. Run the full pipeline
+## 2. Unzip Data File
 
 ``` bash
-python main.py
+unzip data.zip
+```
+
+## 3. Run the inference pipeline
+
+``` bash
+python inference.py
 ```
 
 This will:
 
 -   Train uplift models
 -   Validate via cross-validation
--   Select outreach size
 -   Score test members
 -   Generate final ranked output file
 
@@ -243,7 +250,7 @@ Sorted from highest to lowest expected incremental impact.
 
 # ✅ Design Decisions Summary
 
--   Modeled outreach as causal treatment effect\
+-   Modeled outreach as a causal treatment effect\
 -   Used stratified CV for balanced evaluation\
 -   Validated robustness via placebo tests\
 -   Selected outreach size using marginal economic return\
