@@ -83,7 +83,7 @@ Based on web URL and title keyword buckets:
 -   Sleep
 -   Stress
 
-## 4 Interaction 
+## 4️⃣ Interaction 
 
 Interaction between insurance claims and website content (e.g., diabetes × nutrition engagement)
 
@@ -133,20 +133,14 @@ Feature selection and hyperparameter tuning were done using 5-fold cross-validat
 
 ### Results
 
-  Model                  Uplift@20%
- ____________________________________
-  Placebo test            ~2%
-  -----------------------------------
-  XGBoost model           ~5%
-    (Base)    
-  -----------------------------------
-  XGBoost model          ~7%
-    (Base + Contenct)
-  -----------------------------------  
-  XGBoost model           ~5%
-  (Base + Contenct
-  + interactions)
- -------------------------------------
+## Model Performance (Uplift@20%)
+
+| Model                                           | Uplift@20% |
+|-------------------------------------------------|------------|
+| Placebo Test                                    | ~2%        |
+| XGBoost (Base Features)                         | ~5%        |
+| XGBoost (Base + Context Features)               | **~7%**    |
+| XGBoost (Base + Context + Interaction Terms)    | ~5%        |
 
 The final model more than doubles uplift relative to baseline and
 clearly exceeds the noise floor.
@@ -177,6 +171,8 @@ $$
 ------------------------------------------------------------------------
 
 ## 💰 Economic Assumptions
+
+
 
 Let:
 
