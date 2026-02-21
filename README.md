@@ -225,7 +225,7 @@ pip install -r requirements.txt
 ## 2. Unzip Data File
 
 ``` bash
-unzip data.zip
+tar -xvf data.zip
 ```
 
 ## 3. Run the inference pipeline
