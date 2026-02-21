@@ -1,0 +1,4 @@
+model,feature_set,experiment_name,cv_score
+xgb,base,xgb_base_features,0.053550801
+xgb,base_content,xgb_base_content_features,0.079297126
+xgb,base_content_intersection,xgb_base_content_intersection_features,0.058579194
