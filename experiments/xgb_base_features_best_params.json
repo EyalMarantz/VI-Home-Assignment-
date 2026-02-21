@@ -1,0 +1,1 @@
+{"treatment": {"subsample": 1.0, "n_estimators": 200, "max_depth": 3, "learning_rate": 0.01, "enable_categorical": true, "colsample_bytree": 1.0}, "control": {"subsample": 1.0, "n_estimators": 50, "max_depth": 5, "learning_rate": 0.01, "enable_categorical": true, "colsample_bytree": 0.8}, "score": "0.05798698826698297"}
