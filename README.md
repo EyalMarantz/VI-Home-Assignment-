@@ -2,7 +2,7 @@
 
 ## 📌 Overview
 
-This repository contains a fully reproducible end-to-end solution for
+This repository contains a solution for
 identifying members who are most likely to benefit from outreach in
 order to reduce churn.
 
