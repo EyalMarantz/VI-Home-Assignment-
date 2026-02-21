@@ -50,7 +50,9 @@ $$
 \hat{\tau}(x) = \hat{P}_{control}(x) - \hat{P}_{treatment}(x)
 $$
 
-Models used: - XGBoost classifiers - 5-fold stratified cross-validation
+Models used:
+- XGBoost classifiers as a basic model
+- 5-fold stratified cross-validation to ensure robustness
 
 ------------------------------------------------------------------------
 
@@ -81,11 +83,14 @@ Based on web URL and title keyword buckets:
 -   Sleep
 -   Stress
 
-Additionally: - Condition × content interactions (e.g., diabetes ×
-nutrition engagement)
+## 4 Interaction 
 
-Features were selected based on: - Domain relevance - Stability across
-CV folds - Interpretability - Business alignment
+Interaction between insurance claims and website content (e.g., diabetes × nutrition engagement)
+
+Features were selected based on:
+- Domain relevance
+- Stability across CV folds
+- Interpretability - Business alignment
 
 ------------------------------------------------------------------------
 
@@ -110,27 +115,38 @@ G(k) = \widehat{u}(k) \cdot k
 $$
 
 This represents the estimated number of churn events prevented if we
-contact the top-k members.
+Contact the top-k members.
 
 ------------------------------------------------------------------------
 
-## 🔬 Robustness Experiments
+## 🔬 Experiments
 
 To validate the evaluation pipeline, we conducted:
 
--   Random ranking baseline\
--   Placebo test (shuffled treatment in training)\
--   Logistic regression baseline\
--   5-fold cross-validation
+-   Placebo test (shuffled treatment in training) to ensure model robustness.
+-   Tested XG-Boost Model on subsets of features:
+    - Basic Features: Engagement + Recovery 
+    - Basic Features + Contened Features
+    - Basic Feature + Content Features + Interactions
+
+Feature selection and hyperparameter tuning were done using 5-fold cross-validation
 
 ### Results
 
-  Model                 Uplift@20%
-  --------------------- ------------
-  Random ranking        \~1%
-  Placebo test          \~2%
-  Logistic baseline     \~3--4%
-  Final XGBoost model   \~7%
+  Model                  Uplift@20%
+ ____________________________________
+  Placebo test            ~2%
+  -----------------------------------
+  XGBoost model           ~5%
+    (Base)    
+  -----------------------------------
+  XGBoost model          ~7%
+    (Base + Contenct)
+  -----------------------------------  
+  XGBoost model           ~5%
+  (Base + Contenct
+  + interactions)
+ -------------------------------------
 
 The final model more than doubles uplift relative to baseline and
 clearly exceeds the noise floor.
