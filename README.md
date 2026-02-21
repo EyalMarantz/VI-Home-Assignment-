@@ -191,6 +191,8 @@ We assume that this ratio could be around 0.02.
 We would recommend reaching 20% of users. This will retain a comfortable profitability margin.
 In our test dataset, this translates to 2,0000 members.
 
+Notably, even if the cost assumption is wrong, 20% of users provide the highest marginal uplift.
+
 ------------------------------------------------------------------------
 
 # 📁 Repository Structure
