@@ -1,29 +1,39 @@
 # VI-Home-Assignment-
 
 
-2️⃣ Problem Overview
+Overview
 
-**Goal
-Identify members most likely to benefit from outreach to reduce churn.
+This repository contains a reproducible end-to-end solution for identifying members who are most likely to benefit from outreach in order to reduce churn.
 
-Rather than predicting churn alone, we estimate the incremental treatment effect (uplift) — the expected reduction in churn caused by outreach.
+Rather than predicting churn alone, this solution estimates the incremental impact of outreach (uplift modeling).
+The objective is to prioritize outreach toward members where it produces measurable behavioral change.
 
+Methodology
+Modeling Framework
 
-2️⃣ Method Overview
-**Modeling Approach
+We model this as an uplift learning problem using a T-Learner approach:
 
-We model the problem as an uplift learning task using a T-Learner framework:
+Train one model on treated (outreach) members
 
-Train one model on treated members
+Train one model on control (no outreach) members
 
-Train one model on control members
+Estimate uplift per member as:
 
 Uplift = P(churn | control) − P(churn | treatment)
 
-We use:
+If uplift > 0 → outreach reduces churn for that member.
+
+Models used:
 
 XGBoost classifiers
 
 5-fold stratified cross-validation
 
-Gain@20% as the primary metric
+
+If uplift > 0 → outreach reduces churn for that member.
+
+Models used:
+
+XGBoost classifiers
+
+5-fold stratified cross-validation
